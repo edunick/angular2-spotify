@@ -2,7 +2,6 @@ import {Injectable, Inject, Optional} from '@angular/core';
 import {Http, Headers, Response, Request} from '@angular/http'
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
-
 export interface SpotifyConfig {
   clientId: string,
   redirectUri: string,
