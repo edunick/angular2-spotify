@@ -39,9 +39,9 @@
   },
   "homepage": "https://github.com/edunick/angular2-spotify#readme",
   "devDependencies": {
-    "@ionic/app-scripts": "3.0.0",
-    "@types/jquery": "^3.3.1",
-    "typescript": "2.3.4"
+    "@ionic/app-scripts": "3.1.9",
+    "@types/jquery": "^3.3.1",    
+    "typescript": "~2.6.2"
   },
   "typings": "./angular2-spotify.d.ts"
 }
