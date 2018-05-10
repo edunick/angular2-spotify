@@ -2,6 +2,7 @@ import {Injectable, Inject, Optional} from '@angular/core';
 import {Http, Headers, Response, Request} from '@angular/http'
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
+
 export interface SpotifyConfig {
   clientId: string,
   redirectUri: string,
@@ -93,8 +94,7 @@ export class SpotifyService {
     artist = this.getIdFromUri(artist);
     return this.api({
       method: 'get',
-      url: `/artists/${artist}`,
-	  headers: this.getHeaders()
+      url: `/artists/${artist}`
     }).map(res => res.json());
   }
 
@@ -106,7 +106,6 @@ export class SpotifyService {
     return this.api({
       method: 'get',
       url: `/artists/`,
-	  headers: this.getHeaders(),
       search: { ids: artists.toString() }
     }).map(res => res.json());
   }
@@ -117,7 +116,6 @@ export class SpotifyService {
     return this.api({
       method: 'get',
       url: `/artists/${artist}/albums`,
-	  headers: this.getHeaders(),
       search: options
     }).map(res => res.json());
   }
@@ -548,7 +546,6 @@ export class SpotifyService {
     return this.api({
       method: 'get',
       url: `/search`,
-	  headers: this.getHeaders(),
       search: options
     }).map(res => res.json());
   }
@@ -570,7 +567,6 @@ export class SpotifyService {
     return this.api({
         method: 'get',
         url: `/tracks/`,
-		headers: this.getHeaders(),
         search: { ids: trackList.toString() }
     }).map(res => res.json());
   }
